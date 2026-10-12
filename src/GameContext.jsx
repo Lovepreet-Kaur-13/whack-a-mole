@@ -9,7 +9,7 @@ function makeField() {
   return field;
 }
 
-export default function GameProvide({ children }) {
+export function GameProvider({ children }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [field, setField] = useState(makeField());
   const [score, setScore] = useState(0);
@@ -24,7 +24,7 @@ export default function GameProvide({ children }) {
   }
 
   function whackMole() {
-    score(score + 1);
+    setScore(score + 1);
     setField(makeField());
   }
 
